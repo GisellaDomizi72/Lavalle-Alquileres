@@ -14,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        val myButton: Button = findViewById(R.id.myButton)
+        supportActionBar?.hide() // Oculta la barra que trae por defecto
+        val myButton: Button = findViewById(R.id.button)
         //Comentario
         myButton.setOnClickListener {
             Toast.makeText(this, "¡Hola! Bienvenido a Lavalle Alquileres.", Toast.LENGTH_SHORT).show()

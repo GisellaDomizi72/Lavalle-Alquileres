@@ -5,54 +5,65 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginVertical="55sp"
+    android:layout_marginTop="55sp"
     android:background="@color/white"
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lavalle Alquileres"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
+    <SearchView
 
-    <Button
-        android:id="@+id/myButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Haz click"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/paginaPrincipal"
+
+        android:layout_width="300sp"
+        android:layout_height="35sp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Buscar aquí..."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.515" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
-        android:id="@+id/icono"
-        android:layout_width="27sp"
-        android:layout_height="27sp"
+        android:id="@+id/iconoApp"
+        android:layout_width="35sp"
+        android:layout_height="35sp"
+
+
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toStartOf="@id/paginaPrincipal"
+        app:layout_constraintHorizontal_bias="0.20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <ImageView
+        android:layout_width="35sp"
+        android:layout_height="35sp"
+
+
+        android:clickable="true"
+        android:focusable="true"
         android:src="@drawable/img"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.80"
+        app:layout_constraintStart_toEndOf="@id/paginaPrincipal"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/titulo"
-        app:layout_constraintHorizontal_bias="0.85"/>
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="27sp"
-        android:layout_height="27sp"
-        android:src="@drawable/logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/titulo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"/>
+        />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150sp"
+        android:layout_height="60sp"
+        android:text="Button"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/paginaPrincipal"
+        app:layout_constraintStart_toStartOf="@id/paginaPrincipal"
+        app:layout_constraintTop_toTopOf="@id/paginaPrincipal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
