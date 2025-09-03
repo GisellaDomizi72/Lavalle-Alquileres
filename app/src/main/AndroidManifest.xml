@@ -12,16 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.First">
         <activity
-            android:name=".MispublicacionesActivity"
+            android:name=".ui.main.MispublicacionesActivity"
             android:exported="false" />
         <activity
-            android:name=".AddpublicacionActivity"
+            android:name=".ui.main.AddpublicacionActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilActivity"
+            android:name=".ui.main.PerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".ui.main.HomeActivity" />
     </application>
 
 </manifest>

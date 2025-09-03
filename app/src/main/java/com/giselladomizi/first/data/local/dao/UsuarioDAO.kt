@@ -1,10 +1,10 @@
-package com.giselladomizi.first.data
+package com.giselladomizi.first.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
-import androidx.room.Query
 import androidx.room.Delete
 import androidx.room.Update
+import com.giselladomizi.first.data.local.entity.Usuario
 
 @Dao
 interface UsuarioDAO {

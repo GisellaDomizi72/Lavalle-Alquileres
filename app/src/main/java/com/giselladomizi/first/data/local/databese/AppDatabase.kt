@@ -1,7 +1,13 @@
-package com.giselladomizi.first.data
+package com.giselladomizi.first.data.local.databese
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.giselladomizi.first.data.local.dao.AlquilerDAO
+import com.giselladomizi.first.data.local.dao.PerfilDAO
+import com.giselladomizi.first.data.local.dao.UsuarioDAO
+import com.giselladomizi.first.data.local.entity.Alquiler
+import com.giselladomizi.first.data.local.entity.Perfil
+import com.giselladomizi.first.data.local.entity.Usuario
 
 // version = 1 porque es la primera vez que la creamos
 @Database(

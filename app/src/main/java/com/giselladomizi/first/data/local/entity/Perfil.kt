@@ -1,4 +1,4 @@
-package com.giselladomizi.first.data
+package com.giselladomizi.first.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
