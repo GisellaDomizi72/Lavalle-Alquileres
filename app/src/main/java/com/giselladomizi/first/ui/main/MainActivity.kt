@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             Toast.makeText(this, "¡Hola! Bienvenido a Lavalle Alquileres.", Toast.LENGTH_SHORT).show()
             // Creo intent para ir a HomeActivity
+            val eaw = "sadasd"
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish() //cierra Login para que no se pueda volver con "atrás"
