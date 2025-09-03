@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/misPublicaciones"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MispublicacionesActivity">
+
+    <!-- Separador Azul Arriba -->
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="60dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Titulo Mis Publicaciones -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mis Publicaciones"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/searchBar"
+        app:layout_constraintEnd_toEndOf="@id/searchBar"
+        app:layout_constraintBottom_toBottomOf="@id/searchBar"
+        android:layout_margin="15dp"/>
+
+    <!-- MENU ABAJO  -->
+    <!-- Separador Azul Menú  -->
+    <LinearLayout
+        android:id="@+id/separadorMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="38dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Inicio - Inicio Publicaciones -->
+    <ImageButton
+        android:id="@+id/btnInicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:src="@drawable/inicio"
+        app:layout_constraintStart_toStartOf="@id/separadorMenu"
+        app:layout_constraintEnd_toStartOf="@id/btnMisPublicabiones"
+        app:layout_constraintTop_toTopOf="@id/separadorMenu"
+        android:layout_marginTop="15dp"/>
+
+    <!-- Mis Publicaciones - Editar -->
+    <ImageButton
+        android:id="@+id/btnMisPublicabiones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:src="@drawable/editar"
+        app:layout_constraintStart_toEndOf="@id/btnInicio"
+        app:layout_constraintTop_toTopOf="@id/separadorMenu"
+        app:layout_constraintEnd_toStartOf="@id/btnAddPublicacion"
+        android:layout_marginTop="15dp"/>
+
+    <!-- Añadir Publicacion - Plus -->
+    <ImageButton
+        android:id="@+id/btnAddPublicacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:src="@drawable/plus"
+        app:layout_constraintStart_toEndOf="@id/btnMisPublicabiones"
+        app:layout_constraintEnd_toStartOf="@id/btnVerMiPerfil"
+        app:layout_constraintTop_toTopOf="@id/separadorMenu"
+        android:layout_marginTop="15dp"/>
+
+    <!-- Ver Perfil - user -->
+    <ImageButton
+        android:id="@+id/btnVerMiPerfil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:src="@drawable/user"
+        app:layout_constraintStart_toEndOf="@id/btnAddPublicacion"
+        app:layout_constraintEnd_toEndOf="@id/separadorMenu"
+        app:layout_constraintTop_toTopOf="@id/separadorMenu"
+        android:layout_marginTop="15dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

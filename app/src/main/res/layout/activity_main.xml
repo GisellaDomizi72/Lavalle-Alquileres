@@ -5,54 +5,104 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginVertical="55sp"
     android:background="@color/white"
     tools:context=".MainActivity">
 
 
+    <!-- Título / Nombre de la App -->
     <TextView
-        android:id="@+id/titulo"
+        android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lavalle Alquileres"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
-
-    <Button
-        android:id="@+id/myButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Haz click"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.515" />
+        android:layout_marginTop="250dp"/>
 
+    <!-- Logo -->
     <ImageView
-        android:id="@+id/icono"
-        android:layout_width="27sp"
-        android:layout_height="27sp"
-        android:src="@drawable/img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/titulo"
-        app:layout_constraintHorizontal_bias="0.85"/>
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="27sp"
-        android:layout_height="27sp"
+        android:id="@+id/appLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/logo"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/titulo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Campo Usuario -->
+    <EditText
+        android:id="@+id/etUsuario"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Usuario"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/appLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="60dp"/>
+
+    <!-- Campo Contraseña -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Contraseña"
+        android:textColorHint="@color/black"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/etUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="60dp"/>
+
+    <!-- Icono User -->
+    <ImageView
+        android:id="@+id/ic_user"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etUsuario"
+        app:layout_constraintTop_toTopOf="@id/etUsuario"
+        app:layout_constraintBottom_toBottomOf="@id/etUsuario"
+        app:layout_constraintHorizontal_bias="0.99"/>
+
+    <!-- Icono Password -->
+    <ImageView
+        android:id="@+id/ic_password"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_lock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etPassword"
+        app:layout_constraintTop_toTopOf="@id/etPassword"
+        app:layout_constraintBottom_toBottomOf="@id/etPassword"
+        app:layout_constraintHorizontal_bias="0.99"/>
+
+    <!-- Botón Login negro -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="Iniciar Sesión"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="40dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
