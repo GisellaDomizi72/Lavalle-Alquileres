@@ -6,8 +6,13 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import android.widget.EditText
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
+import androidx.room.Room
 import com.giselladomizi.first.R
+import com.giselladomizi.first.data.local.databese.AppDatabase
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,16 +22,44 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide() // Oculta la barra que trae por defecto
 
+        //Campos del Layout
+        val etUsuario: EditText = findViewById(R.id.etUsuario)
+        val etPassword: EditText = findViewById(R.id.etPassword)
         val btnLogin: Button = findViewById(R.id.btnLogin)
         val registro: TextView = findViewById(R.id.registro)
 
-        //Redirección para loguearse
+
+        // Llamo la instancia de la BD
+        val db = AppDatabase.getDatabase(this)
+
+        //Redirección para loguearse e ir a Vista Home
         btnLogin.setOnClickListener {
-            Toast.makeText(this, "¡Hola! Bienvenido a Lavalle Alquileres.", Toast.LENGTH_SHORT).show()
-            // Creo intent para ir a HomeActivity
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish() //cierra Login para que no se pueda volver con "atrás"
+
+            val usuario = etUsuario.text.toString().trim()
+            val password = etPassword.text.toString().trim()
+
+            if (usuario.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
+            } else {
+                lifecycleScope.launch {
+                    val user = db.usuarioDAO().login(usuario, password)
+                    if (user != null) {
+                        Toast.makeText(this@MainActivity, "¡Bienvenido a Lavalle Alquileres!", Toast.LENGTH_SHORT).show()
+
+                        // Guardar sesión con el ID del usuario
+                        val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
+                        prefs.edit().putInt("id_usuario", user.id_user).apply()
+
+
+                        // Ir a Home
+                        val intent = Intent(this@MainActivity, HomeActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this@MainActivity, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
         }
 
         //Redirección para registrarse

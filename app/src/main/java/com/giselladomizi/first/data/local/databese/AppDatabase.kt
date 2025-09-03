@@ -1,6 +1,8 @@
 package com.giselladomizi.first.data.local.databese
 
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.giselladomizi.first.data.local.dao.AlquilerDAO
 import com.giselladomizi.first.data.local.dao.PerfilDAO
@@ -20,4 +22,21 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun usuarioDAO(): UsuarioDAO
     abstract fun perfilDAO(): PerfilDAO
     abstract fun alquilerDAO(): AlquilerDAO
+
+    companion object {
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
+
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "bd_lavalle_alquileres"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
 }
