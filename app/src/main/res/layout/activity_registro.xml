@@ -13,136 +13,162 @@
         android:id="@+id/idTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
         android:text="Registrate"
+        android:textColor="#2C3E50"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:textColor="#2C3E50"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="200dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Descriptor -->
     <TextView
         android:id="@+id/descriptor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Completa tus datos:"
+        android:textColor="#2C3E50"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#2C3E50"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/idTitulo"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idTitulo" />
 
     <!-- Campo Nombre -->
     <EditText
         android:id="@+id/etNombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/descriptor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="40dp"/>
+        android:hint="Nombre"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptor" />
 
     <!-- Campo Apellido -->
     <EditText
         android:id="@+id/etApellido"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Apellido"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/etNombre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="40dp"/>
+        android:hint="Apellido"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNombre" />
 
     <!-- Campo Correo -->
     <EditText
         android:id="@+id/etCorreo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="16dp"
         android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
         android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/etApellido"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="40dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etApellido" />
 
     <!-- Campo Teléfono -->
     <EditText
         android:id="@+id/etTelefono"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="16dp"
         android:hint="Teléfono"
         android:inputType="phone"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
         android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/etCorreo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="40dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etCorreo" />
 
     <!-- Campo Usuario -->
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Nombre de usuario"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/etTelefono"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="40dp"/>
+        android:hint="Nombre de usuario"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTelefono" />
 
     <!-- Campo Contraseña -->
     <EditText
         android:id="@+id/etContrasena"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="16dp"
         android:hint="Contraseña"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
         android:inputType="textPassword"
         android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/etUsuario"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="40dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUsuario" />
 
     <!-- Botón Registrarse -->
     <Button
         android:id="@+id/btnRegistro"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="sans-serif-medium"
         android:text="Registrarse"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:backgroundTint="@color/black"
-        android:fontFamily="sans-serif-medium"
-        android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="40dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etContrasena"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etContrasena" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/layer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

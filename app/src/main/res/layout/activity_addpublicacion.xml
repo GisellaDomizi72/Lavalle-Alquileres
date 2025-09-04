@@ -49,7 +49,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+
+    <EditText
+        android:id="@+id/tipo_alqui"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="¿Que alquilas? Ej: Casa"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="40dp"/>
+
+    <EditText
+        android:id="@+id/ubicaion_alqui"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ubicación"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tipo_alqui"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="40dp"/>
+
+    <ImageView
+        android:id="@+id/imagen_alqui"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="40dp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/darker_gray"
+        android:contentDescription="Imagen de la publicación"
+        app:layout_constraintTop_toBottomOf="@+id/ubicaion_alqui"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/id_button"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="Seleccionar Imagen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagen_alqui"/>
+
+
     <!-- Inicio - Inicio Publicaciones -->
+    <EditText
+        android:id="@+id/descripcion_alqui"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="32dp"
+        android:hint="Descripción"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_button" />
+
     <ImageButton
         android:id="@+id/btnInicio"
         android:layout_width="0dp"
