@@ -47,7 +47,7 @@ class AddpublicacionActivity : AppCompatActivity() {
         val btnSeleccionarImagen = findViewById<Button>(R.id.id_button)
         val btnGuardar = findViewById<Button>(R.id.btnGuardarPublicacion)
 
-        // 👉 Registrar el ActivityResult para seleccionar imágenes
+        // Registrar el ActivityResult para seleccionar imágenes
         val pickImage =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == Activity.RESULT_OK) {
@@ -58,14 +58,14 @@ class AddpublicacionActivity : AppCompatActivity() {
                 }
             }
 
-        // 👉 Click listener para el botón de seleccionar imagen
+        // Click listener para el botón de seleccionar imagen
         btnSeleccionarImagen.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK) // Intent para seleccionar contenido
             intent.type = "image/*" // Solo imágenes
             pickImage.launch(intent) // Lanza el selector de imágenes
         }
 
-        // 👉 Click listener para guardar publicación
+        // Click listener para guardar publicación
         btnGuardar.setOnClickListener {
             val tipo = tipoAlqui.text.toString()
             val ubicacion = ubicacionAlqui.text.toString()
@@ -110,7 +110,7 @@ class AddpublicacionActivity : AppCompatActivity() {
             }
         }
 
-        // 👉 Navegación inferior
+        // Navegación inferior
         btnInicio.setOnClickListener {
             val intentinicio = Intent(this, HomeActivity::class.java)
             startActivity(intentinicio)

@@ -35,8 +35,7 @@
         app:layout_constraintBottom_toBottomOf="@id/searchBar"
         android:layout_margin="15dp"/>
 
-    <!-- MENU ABAJO  -->
-    <!-- Separador Azul Menú  -->
+    <!-- Contenedor inferior azul que sirve como barra de navegación -->
     <LinearLayout
         android:id="@+id/separadorMenu"
         android:layout_width="match_parent"
@@ -49,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
+    <!-- Contenedor con scroll para el formulario -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -57,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchBar">
-
+        <!-- Contenedor vertical que organiza los campos del formulario -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +64,7 @@
             android:padding="20dp"
 
             >
-
+            <!-- Campo de texto para tipo de alquiler -->
             <EditText
                 android:id="@+id/tipo_alqui"
                 android:layout_width="match_parent"
@@ -75,7 +74,7 @@
                 android:textColor="@color/black"
                 android:padding="12dp"
                />
-
+            <!-- Campo de texto para ubicación -->
             <EditText
                 android:id="@+id/ubicaion_alqui"
                 android:layout_width="match_parent"
@@ -85,7 +84,7 @@
                 android:textColor="@color/black"
                 android:padding="12dp"
                 android:layout_marginTop="30dp"/>
-
+            <!-- Imagen de referencia de la publicación -->
             <ImageView
                 android:id="@+id/imagen_alqui"
                 android:layout_width="370dp"
@@ -96,7 +95,7 @@
                 android:src="@drawable/imagenhorizontal"
                 android:background="@android:color/white"
                 android:contentDescription="Imagen de la publicación"/>
-
+            <!-- Botón para seleccionar imagen -->
             <Button
                 android:id="@+id/id_button"
                 android:layout_width="match_parent"
@@ -107,7 +106,7 @@
                 android:text="Seleccionar Imagen"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
-
+            <!-- Campo de texto para descripción -->
             <EditText
                 android:id="@+id/descripcion_alqui"
                 android:layout_width="match_parent"
@@ -117,7 +116,7 @@
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"/>
-
+            <!-- Botón para guardar la publicación -->
             <Button
                 android:id="@+id/btnGuardarPublicacion"
                 android:layout_width="match_parent"
@@ -131,7 +130,7 @@
         </LinearLayout>
     </ScrollView>
 
-
+    <!-- Botón de navegación inferior: ir a inicio -->
     <ImageButton
         android:id="@+id/btnInicio"
         android:layout_width="0dp"
