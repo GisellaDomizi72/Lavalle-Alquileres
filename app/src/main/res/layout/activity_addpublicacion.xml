@@ -171,6 +171,6 @@
         app:layout_constraintStart_toEndOf="@id/btnAddPublicacion"
         app:layout_constraintEnd_toEndOf="@id/separadorMenu"
         app:layout_constraintTop_toTopOf="@id/separadorMenu"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
