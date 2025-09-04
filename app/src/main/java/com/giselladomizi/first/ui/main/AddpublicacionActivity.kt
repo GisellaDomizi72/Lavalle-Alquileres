@@ -98,7 +98,7 @@ class AddpublicacionActivity : AppCompatActivity() {
 
                 // Mostrar mensaje y limpiar campos en el hilo principal
                 runOnUiThread {
-                    Toast.makeText(this@AddpublicacionActivity, "Publicación guardada ✅", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@AddpublicacionActivity, "Publicación guardada", Toast.LENGTH_SHORT).show()
 
                     // Limpiar campos después de guardar
                     tipoAlqui.text.clear()
