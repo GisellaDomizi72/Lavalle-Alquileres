@@ -35,9 +35,9 @@
     <!-- Imagen de la propiedad -->
     <ImageView
         android:id="@+id/imgAlquiler"
-        android:backgroundTint="@color/lightGray"
+        android:backgroundTint="@color/white"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:layout_marginTop="8dp"
         android:scaleType="fitCenter"
         android:background="@android:color/darker_gray"

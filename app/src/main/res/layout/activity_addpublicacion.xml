@@ -88,12 +88,13 @@
 
             <ImageView
                 android:id="@+id/imagen_alqui"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="370dp"
+                android:layout_height="210dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:scaleType="centerCrop"
-                android:background="@android:color/darker_gray"
+                android:scaleType="fitCenter"
+                android:src="@drawable/imagenhorizontal"
+                android:background="@android:color/white"
                 android:contentDescription="Imagen de la publicación"/>
 
             <Button
