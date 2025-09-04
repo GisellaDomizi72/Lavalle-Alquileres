@@ -79,7 +79,8 @@ class AddpublicacionActivity : AppCompatActivity() {
             }
 
             // ID de perfil fijo (temporal), luego se obtendrá del usuario logueado
-            val idPerfil = 1
+            val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
+            val idPerfil = prefs.getInt("id_usuario", -1)
 
             // Crear objeto Alquiler con los datos ingresados
             val nuevoAlquiler = Alquiler(

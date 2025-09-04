@@ -35,10 +35,11 @@
     <!-- Imagen de la propiedad -->
     <ImageView
         android:id="@+id/imgAlquiler"
+        android:backgroundTint="@color/lightGray"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         android:background="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@id/txtTipoAlquiler"
         app:layout_constraintStart_toStartOf="parent"
