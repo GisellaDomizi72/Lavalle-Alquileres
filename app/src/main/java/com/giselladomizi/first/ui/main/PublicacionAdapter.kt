@@ -20,6 +20,8 @@ class PublicacionAdapter(
         val ubicacion: TextView = view.findViewById(R.id.txtUbicacion)
         val descripcion: TextView = view.findViewById(R.id.txtDescripcion)
         val usuario: TextView = view.findViewById(R.id.txtUsuario)
+        val telefono: TextView = view.findViewById(R.id.txtTelefono)
+        val correo: TextView = view.findViewById(R.id.txtCorreo)
         val imagen: ImageView = view.findViewById(R.id.imgAlquiler)
     }
 
@@ -32,10 +34,12 @@ class PublicacionAdapter(
     override fun onBindViewHolder(holder: PublicacionViewHolder, position: Int) {
         val (alquiler, perfil) = publicaciones[position]
 
-        holder.tipo.text = alquiler.tipo_alqui
+        holder.tipo.text = alquiler.tipo_alqui + " - "
         holder.ubicacion.text = alquiler.ubicacion_alqui
         holder.descripcion.text = alquiler.descripcion_alqui
-        holder.usuario.text = "${perfil.nombre_p} ${perfil.apellido_p}"
+        holder.usuario.text = "${perfil.nombre_p} ${perfil.apellido_p}" + " - "
+        holder.telefono.text = "${perfil.telefono_p} - "
+        holder.correo.text = "${perfil.correo_p}"
 
         if (alquiler.imagen_alqui.isNotEmpty()) {
             // Glide se encarga de manejar URIs y permisos de forma segura

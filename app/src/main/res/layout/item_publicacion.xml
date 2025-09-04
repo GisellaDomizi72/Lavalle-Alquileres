@@ -7,57 +7,88 @@
     android:padding="16dp"
     android:background="@android:color/white">
 
+    <!-- Tipo de Alquiler -->
     <TextView
         android:id="@+id/txtTipoAlquiler"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tipo de Alquiler"
+        android:text="Casa -"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/txtUbicacion"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ubicación"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTipoAlquiler"/>
+        android:text="Barrio Santa Teresita"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@id/txtTipoAlquiler"
+        app:layout_constraintStart_toEndOf="@id/txtTipoAlquiler"
+        android:layout_marginStart="4dp"/>
 
+
+    <!-- Imagen de la propiedad -->
     <ImageView
         android:id="@+id/imgAlquiler"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"
         android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
         android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@id/txtUbicacion"
+        app:layout_constraintTop_toBottomOf="@id/txtTipoAlquiler"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Descripción -->
     <TextView
         android:id="@+id/txtDescripcion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Descripción"
+        android:text="Casa de 3 habitaciones en el barrio Santa Teresita. Cuenta con patio delantero, trasero, pileta, quincho y churrasquera. Se permiten mascotas."
+        android:textColor="@color/darkGray"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/imgAlquiler"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Nombre del usuario -->
     <TextView
         android:id="@+id/txtUsuario"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre y Apellido"
-        android:textStyle="italic"
+        android:text="Luisa Dominguez -"
+        android:textColor="@color/darkGray"
         android:layout_marginTop="4dp"
         app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2615948764 -"
+        android:textColor="@color/darkGray"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
+        app:layout_constraintStart_toEndOf="@id/txtUsuario"
+        app:layout_constraintBaseline_toBaselineOf="@id/txtUsuario"/>
+
+    <TextView
+        android:id="@+id/txtCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:text="luisadominguez@gmail.com"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
+        app:layout_constraintStart_toEndOf="@id/txtTelefono"
+        app:layout_constraintBaseline_toBaselineOf="@id/txtUsuario"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
