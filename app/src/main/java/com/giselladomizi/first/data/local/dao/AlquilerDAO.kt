@@ -13,6 +13,10 @@ interface AlquilerDAO {
     @Delete
     suspend fun deleteAlquiler(alquiler: Alquiler)
 
+    @Query("SELECT * FROM alquiler")
+    suspend fun getAllAlquileres(): List<Alquiler>
+
+
     //@Query("SELECT * FROM alquiler WHERE id_alqui = :id")
     //suspend fun getAlquilerById(id: Int): Alquiler?
 

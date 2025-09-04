@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".ui.main.HomeActivity">
 
-    <!-- BUSCADOR ARRIBA  -->
-    <!-- Separador Azul Arriba -->
+    <!-- Separador Azul Arriba con buscador -->
     <LinearLayout
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
@@ -36,197 +37,63 @@
         app:layout_constraintBottom_toBottomOf="@id/searchBar"
         android:layout_margin="10dp"/>
 
-    <!-- SECCIÓN DE SCROLL -->
-    <!-- Contenido scrollable en el medio -->
-    <ScrollView
-        android:id="@+id/scrollContent"
+
+    <!-- RecyclerView para mostrar publicaciones dinámicas -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPublicaciones"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
         app:layout_constraintTop_toBottomOf="@id/searchBar"
-        app:layout_constraintBottom_toTopOf="@id/separadorMenu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
-
-        <!-- Contenedor interno para el contenido scrollable -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <!-- Aca van las publicaciones-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Casa - Villa Tulumaya"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:padding="8dp"/>
-            <ImageView
-                android:layout_width="500dp"
-                android:layout_height="300dp"
-                android:src="@drawable/casa1"
-                android:scaleType="fitCenter"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Casa de 3 habitaciones en el barrio Santa Teresita. Cuenta con patio delantero, trasero, pileta, quincho y churrasquera. Se permiten mascotas."
-                android:textColor="@color/darkGray"
-                android:textSize="14sp"
-                android:padding="8dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Luisa Dominguez - 2615948764 - luisadominguez@gmail.com"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:padding="8dp"
-                android:layout_marginBottom="30dp"/>
-
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Casa - Villa Tulumaya"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:padding="8dp"/>
-            <ImageView
-                android:layout_width="500dp"
-                android:layout_height="300dp"
-                android:src="@drawable/casa1"
-                android:scaleType="fitCenter"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Casa de 3 habitaciones en el barrio Santa Teresita. Cuenta con patio delantero, trasero, pileta, quincho y churrasquera. Se permiten mascotas."
-                android:textColor="@color/darkGray"
-                android:textSize="14sp"
-                android:padding="8dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Luisa Dominguez - 2615948764 - luisadominguez@gmail.com"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:padding="8dp"
-                android:layout_marginBottom="30dp"/>
-
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Casa - Villa Tulumaya"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:padding="8dp"/>
-            <ImageView
-                android:layout_width="500dp"
-                android:layout_height="300dp"
-                android:src="@drawable/casa1"
-                android:scaleType="fitCenter"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Casa de 3 habitaciones en el barrio Santa Teresita. Cuenta con patio delantero, trasero, pileta, quincho y churrasquera. Se permiten mascotas."
-                android:textColor="@color/darkGray"
-                android:textSize="14sp"
-                android:padding="8dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Luisa Dominguez - 2615948764 - luisadominguez@gmail.com"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:padding="8dp"/>
-
-        </LinearLayout>
-    </ScrollView>
-
-    <!-- Contenedor dinámico de fragments -->
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/separadorMenu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- MENU ABAJO  -->
-    <!-- Separador Azul Menú  -->
+    <!-- Separador azul inferior (menú) -->
     <LinearLayout
         android:id="@+id/separadorMenu"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="38dp"
+        android:padding="16dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:background="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Boton Inicio - Inicio Publicaciones -->
-    <ImageButton
-        android:id="@+id/btnInicio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:src="@drawable/inicio"
-        app:layout_constraintStart_toStartOf="@id/separadorMenu"
-        app:layout_constraintEnd_toStartOf="@id/btnMisPublicabiones"
-        app:layout_constraintTop_toTopOf="@id/separadorMenu"
-        android:layout_marginTop="15dp"/>
+        <ImageButton
+            android:id="@+id/btnInicio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/inicio"/>
 
-    <!-- Mis Publicaciones - Editar -->
-    <ImageButton
-        android:id="@+id/btnMisPublicabiones"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:src="@drawable/editar"
-        app:layout_constraintStart_toEndOf="@id/btnInicio"
-        app:layout_constraintTop_toTopOf="@id/separadorMenu"
-        app:layout_constraintEnd_toStartOf="@id/btnAddPublicacion"
-        android:layout_marginTop="15dp"/>
+        <ImageButton
+            android:id="@+id/btnMisPublicabiones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/editar"/>
 
-    <!-- Añadir Publicacion - Plus -->
-    <ImageButton
-        android:id="@+id/btnAddPublicacion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:src="@drawable/plus"
-        app:layout_constraintStart_toEndOf="@id/btnMisPublicabiones"
-        app:layout_constraintEnd_toStartOf="@id/btnVerMiPerfil"
-        app:layout_constraintTop_toTopOf="@id/separadorMenu"
-        android:layout_marginTop="15dp"/>
+        <ImageButton
+            android:id="@+id/btnAddPublicacion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/plus"/>
 
-    <!-- Ver Perfil - user -->
-    <ImageButton
-        android:id="@+id/btnVerMiPerfil"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:src="@drawable/user"
-        app:layout_constraintStart_toEndOf="@id/btnAddPublicacion"
-        app:layout_constraintEnd_toEndOf="@id/separadorMenu"
-        app:layout_constraintTop_toTopOf="@id/separadorMenu"
-        android:layout_marginTop="15dp"/>
+        <ImageButton
+            android:id="@+id/btnVerMiPerfil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/user"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

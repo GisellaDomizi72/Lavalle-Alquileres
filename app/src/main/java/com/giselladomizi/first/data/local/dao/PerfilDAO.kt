@@ -14,6 +14,10 @@ interface PerfilDAO {
     @Delete
     suspend fun deletePerfil(perfil: Perfil)
 
+    @Query("SELECT * FROM perfil WHERE id_perfil = :id LIMIT 1")
+    suspend fun getPerfilById(id: Int): Perfil?
+
+
     //@Query("SELECT * FROM perfil WHERE id_perfil = :id")
     //suspend fun getPerfilById(id: Int): Perfil?
 

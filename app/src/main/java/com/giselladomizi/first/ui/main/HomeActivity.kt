@@ -6,6 +6,11 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.giselladomizi.first.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import com.giselladomizi.first.data.local.databese.AppDatabase
 
 class HomeActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +34,21 @@ class HomeActivity : AppCompatActivity(){
         btnMisPublicabiones.setOnClickListener {
             val intentmispublicaciones = Intent(this, MispublicacionesActivity::class.java)
             startActivity(intentmispublicaciones)
+        }
+
+        val rvPublicaciones = findViewById<RecyclerView>(R.id.rvPublicaciones)
+        rvPublicaciones.layoutManager = LinearLayoutManager(this)
+
+        lifecycleScope.launch {
+            val db = AppDatabase.getDatabase(applicationContext)
+            val alquileres = db.alquilerDAO().getAllAlquileres() // 👉 agregamos este query
+            val publicacionesConPerfil = alquileres.map { alquiler ->
+                val perfil = db.perfilDAO().getPerfilById(alquiler.id_perfil)
+                alquiler to perfil!!
+            }
+            runOnUiThread {
+                rvPublicaciones.adapter = PublicacionAdapter(publicacionesConPerfil)
+            }
         }
 
     }
