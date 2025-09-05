@@ -17,13 +17,7 @@ interface PerfilDAO {
     @Query("SELECT * FROM perfil WHERE id_perfil = :id LIMIT 1")
     suspend fun getPerfilById(id: Int): Perfil?
 
+    @Query("SELECT * FROM perfil WHERE id_user = :id LIMIT 1")
+    suspend fun getPerfilByUserId(id: Int): Perfil?
 
-    //@Query("SELECT * FROM perfil WHERE id_perfil = :id")
-    //suspend fun getPerfilById(id: Int): Perfil?
-
-    //@Query("SELECT * FROM perfil WHERE id_user = :userId")
-    //suspend fun getPerfilesByUser(userId: Int): List<Perfil>
-
-    //@Query("SELECT * FROM perfil")
-    //suspend fun getAllPerfiles(): List<Perfil>
 }

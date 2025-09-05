@@ -16,13 +16,4 @@ interface AlquilerDAO {
     @Query("SELECT * FROM alquiler")
     suspend fun getAllAlquileres(): List<Alquiler>
 
-
-    //@Query("SELECT * FROM alquiler WHERE id_alqui = :id")
-    //suspend fun getAlquilerById(id: Int): Alquiler?
-
-    //@Query("SELECT * FROM alquiler WHERE id_perfil = :perfilId")
-    //suspend fun getAlquileresByPerfil(perfilId: Int): List<Alquiler>
-
-    //@Query("SELECT * FROM alquiler")
-    //suspend fun getAllAlquileres(): List<Alquiler>
 }

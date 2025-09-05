@@ -104,7 +104,7 @@ class AddpublicacionActivity : AppCompatActivity() {
                     tipoAlqui.text.clear()
                     ubicacionAlqui.text.clear()
                     descripcionAlqui.text.clear()
-                    imagenAlqui.setImageResource(android.R.color.darker_gray)
+                    imagenAlqui.setImageResource(R.drawable.imagenhorizontal)
                     imagenUri = null
                 }
             }
