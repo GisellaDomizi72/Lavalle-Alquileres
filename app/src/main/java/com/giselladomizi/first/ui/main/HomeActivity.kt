@@ -41,7 +41,7 @@ class HomeActivity : AppCompatActivity(){
 
         lifecycleScope.launch {
             val db = AppDatabase.getDatabase(applicationContext)
-            val alquileres = db.alquilerDAO().getAllAlquileres() // 👉 agregamos este query
+            val alquileres = db.alquilerDAO().getAllAlquileres() //Agregamos este query
             val publicacionesConPerfil = alquileres.map { alquiler ->
                 val perfil = db.perfilDAO().getPerfilById(alquiler.id_perfil)
                 alquiler to perfil!!
