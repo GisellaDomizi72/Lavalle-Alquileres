@@ -47,6 +47,7 @@ class PerfilActivity : AppCompatActivity() {
         val btnInicio: ImageButton = findViewById(R.id.btnInicio)
         val btnAddPublicacion: ImageButton = findViewById(R.id.btnAddPublicacion)
         val btnMisPublicabiones: ImageButton = findViewById(R.id.btnMisPublicabiones)
+        val cerrarSesion: TextView = findViewById(R.id.cerrarSesion)
 
         btnInicio.setOnClickListener{
             val intentinicio = Intent(this, HomeActivity::class.java)
@@ -59,6 +60,15 @@ class PerfilActivity : AppCompatActivity() {
         btnMisPublicabiones.setOnClickListener {
             val intentmispublicaciones = Intent(this, MispublicacionesActivity::class.java)
             startActivity(intentmispublicaciones)
+        }
+        //Cerrar sesión
+        cerrarSesion.setOnClickListener {
+            prefs.edit().clear().apply() // Elimina la sesión guardada
+
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish() // Evito que vuelva al perfil
         }
 
     }
