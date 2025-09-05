@@ -35,6 +35,76 @@
         app:layout_constraintBottom_toBottomOf="@id/searchBar"
         android:layout_margin="15dp"/>
 
+    <!-- Datos del perfil -->
+    <LinearLayout
+        android:id="@+id/contenedorPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Intro / descripción -->
+        <TextView
+            android:id="@+id/txtIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aquí puedes ver los datos asociados a tu cuenta."
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/darkGray"
+            android:gravity="center"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:id="@+id/pNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre: "
+            android:textSize="20sp"
+            android:textColor="@color/darkGray"/>
+
+        <TextView
+            android:id="@+id/pApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido: "
+            android:textSize="20sp"
+            android:textColor="@color/darkGray"/>
+
+        <TextView
+            android:id="@+id/pCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo: "
+            android:textSize="20sp"
+            android:textColor="@color/darkGray"/>
+
+        <TextView
+            android:id="@+id/pTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono: "
+            android:textSize="20sp"
+            android:textColor="@color/darkGray"/>
+    </LinearLayout>
+
+    <!-- Cerrar Sesión-->
+    <TextView
+        android:id="@+id/cerrarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesión"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="@id/contenedorPerfil"
+        app:layout_constraintEnd_toEndOf="@id/contenedorPerfil"
+        app:layout_constraintTop_toBottomOf="@id/contenedorPerfil"/>
     <!-- MENU ABAJO  -->
     <!-- Separador Azul Menú  -->
     <LinearLayout
