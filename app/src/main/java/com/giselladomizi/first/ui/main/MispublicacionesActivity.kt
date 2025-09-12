@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.giselladomizi.first.data.local.entity.Alquiler
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ import com.giselladomizi.first.data.local.databese.AppDatabase
 import kotlinx.coroutines.launch
 
 class MispublicacionesActivity : AppCompatActivity() {
+   private lateinit var adapter: MisPublicacionesAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,6 +23,7 @@ class MispublicacionesActivity : AppCompatActivity() {
         val btnInicio: ImageButton = findViewById(R.id.btnInicio)
         val btnVerMiPerfil: ImageButton = findViewById(R.id.btnVerMiPerfil)
         val btnAddPublicacion: ImageButton = findViewById(R.id.btnAddPublicacion)
+
 
         btnInicio.setOnClickListener {
             val intentinicio = Intent(this, HomeActivity::class.java)
@@ -42,20 +45,26 @@ class MispublicacionesActivity : AppCompatActivity() {
         val publicacionesMias = findViewById<RecyclerView>(R.id.publicacionesMias)
         publicacionesMias.layoutManager = LinearLayoutManager(this)
 
+
+        val db = AppDatabase.getDatabase(applicationContext)
         lifecycleScope.launch {
-            val db = AppDatabase.getDatabase(applicationContext)
+
             val alquileres = db.alquilerDAO().getAlquileresByPerfil(perfilId) //
 
-            val perfil = db.perfilDAO().getPerfilById(perfilId)
 
-            val listaPublicaciones= alquileres.map{alquiler->
-                alquiler to perfil!!
-
-
+            adapter= MisPublicacionesAdapter(alquileres.toMutableList()){ alquiler ->
+                lifecycleScope.launch {
+                    db.alquilerDAO().deleteAlquiler(alquiler)
+                    adapter.removeItem(alquiler)
+                }
 
             }
 
-            publicacionesMias.adapter = PublicacionAdapter(listaPublicaciones)
+
+
+
+
+            publicacionesMias.adapter = adapter
 
 
         }

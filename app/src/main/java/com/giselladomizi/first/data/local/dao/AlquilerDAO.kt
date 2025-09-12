@@ -10,8 +10,10 @@ interface AlquilerDAO {
     @Update
     suspend fun updateAlquiler(alquiler: Alquiler)
 
+
+
     @Delete
-    suspend fun deleteAlquiler(alquiler: Alquiler)
+    suspend fun  deleteAlquiler(alquiler: Alquiler)
 
     @Query("SELECT * FROM alquiler")
     suspend fun getAllAlquileres(): List<Alquiler>
