@@ -3,6 +3,7 @@ package com.giselladomizi.first.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.giselladomizi.first.data.local.entity.Alquiler
@@ -15,7 +16,7 @@ import kotlinx.coroutines.launch
 //Activity donde se muestran las publicaciones del usuario logueado
 class MispublicacionesActivity : AppCompatActivity() {
     //Adaptador del RecyclerView
-   private lateinit var adapter: MisPublicacionesAdapter
+    private lateinit var adapter: MisPublicacionesAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge() //Activa el soporte para que la UI use toda la pantalla
@@ -41,7 +42,7 @@ class MispublicacionesActivity : AppCompatActivity() {
         }
 //Recuperar el id del usuario logueado guardado en SharedPreferences
         val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
-        val perfilId= prefs.getInt("id_usuario",0)
+        val perfilId = prefs.getInt("id_usuario", 0)
 
         //Configuracion del RecyclerView
         val publicacionesMias = findViewById<RecyclerView>(R.id.publicacionesMias)
@@ -55,17 +56,31 @@ class MispublicacionesActivity : AppCompatActivity() {
             val alquileres = db.alquilerDAO().getAlquileresByPerfil(perfilId) //
 
 //Configurar el adaptador con la lista y la accion de eliminar
-            adapter= MisPublicacionesAdapter(alquileres.toMutableList()){ alquiler ->
-                lifecycleScope.launch {
-                    //Eliminar la publicacion de la base de datos
-                    db.alquilerDAO().deleteAlquiler(alquiler)
-                    //Eliminar publicacion de la lista en pantalla
-                    adapter.removeItem(alquiler)
+            adapter = MisPublicacionesAdapter(alquileres.toMutableList()) { alquiler ->
+
+//Crear dialogo de confirmacion
+                val builder =
+                    androidx.appcompat.app.AlertDialog.Builder(this@MispublicacionesActivity)
+                builder.setTitle("Confirmar eliminación")
+                builder.setMessage("¿Seguro que deseas eliminar esta publicación? ")
+//Boton SI elimina de la bd y la lista
+                builder.setPositiveButton("SI") { _, _ ->
+                    lifecycleScope.launch {
+                        //Eliminar la publicacion de la base de datos
+                        db.alquilerDAO().deleteAlquiler(alquiler)
+                        //Eliminar publicacion de la lista en pantalla
+                        adapter.removeItem(alquiler)
+                        Toast.makeText(this@MispublicacionesActivity,"Publicación eliminada con exito", Toast.LENGTH_SHORT).show()
+                    }
+                }
+//Boton No- Cierra el dialogo
+                builder.setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
                 }
 
+                //Mostrar el dialogo
+                builder.create().show()
             }
-
-
 
 
 //Asignar adaptador al RecyclerView
@@ -73,7 +88,8 @@ class MispublicacionesActivity : AppCompatActivity() {
 
 
         }
-
     }
 }
+
+
 
