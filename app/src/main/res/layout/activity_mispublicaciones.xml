@@ -35,6 +35,21 @@
         app:layout_constraintBottom_toBottomOf="@id/searchBar"
         android:layout_margin="15dp"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/publicacionesMias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
+        app:layout_constraintBottom_toTopOf="@id/separadorMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
     <!-- MENU ABAJO  -->
     <!-- Separador Azul Menú  -->
     <LinearLayout
