@@ -6,9 +6,12 @@ import com.giselladomizi.first.data.local.entity.Alquiler
 interface AlquilerDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAlquiler(alquiler: Alquiler)
-
+//Update - Actualizar alquiler
     @Update
     suspend fun updateAlquiler(alquiler: Alquiler)
+
+    @Query("SELECT * FROM alquiler WHERE id_alqui = :id")
+    suspend fun getAlquilerById(id: Int): Alquiler?
 
 
 //Eliminar un alquiler
