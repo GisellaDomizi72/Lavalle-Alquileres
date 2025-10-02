@@ -2,6 +2,7 @@ package com.giselladomizi.first.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,20 +23,6 @@ class HomeActivity : AppCompatActivity(){
         val btnAddPublicacion: ImageButton = findViewById(R.id.btnAddPublicacion)
         val btnMisPublicabiones: ImageButton = findViewById(R.id.btnMisPublicabiones)
 
-        btnVerMiPerfil.setOnClickListener{
-            // Creo intent para ir a PerfilActivity
-            val intentperfil = Intent(this, PerfilActivity::class.java)
-            startActivity(intentperfil)
-        }
-        btnAddPublicacion.setOnClickListener{
-            val intentaddpublicacion = Intent(this, AddpublicacionActivity::class.java)
-            startActivity(intentaddpublicacion)
-        }
-        btnMisPublicabiones.setOnClickListener {
-            val intentmispublicaciones = Intent(this, MispublicacionesActivity::class.java)
-            startActivity(intentmispublicaciones)
-        }
-
         val rvPublicaciones = findViewById<RecyclerView>(R.id.rvPublicaciones)
         rvPublicaciones.layoutManager = LinearLayoutManager(this)
 
@@ -49,6 +36,21 @@ class HomeActivity : AppCompatActivity(){
             runOnUiThread {
                 rvPublicaciones.adapter = PublicacionAdapter(publicacionesConPerfil)
             }
+        }
+
+        //Navegación del Menú
+        btnVerMiPerfil.setOnClickListener{
+            // Creo intent para ir a PerfilActivity
+            val intentperfil = Intent(this, PerfilActivity::class.java)
+            startActivity(intentperfil)
+        }
+        btnAddPublicacion.setOnClickListener{
+            val intentaddpublicacion = Intent(this, AddpublicacionActivity::class.java)
+            startActivity(intentaddpublicacion)
+        }
+        btnMisPublicabiones.setOnClickListener {
+            val intentmispublicaciones = Intent(this, MispublicacionesActivity::class.java)
+            startActivity(intentmispublicaciones)
         }
 
     }

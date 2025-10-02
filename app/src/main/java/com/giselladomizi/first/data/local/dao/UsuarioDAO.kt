@@ -25,4 +25,8 @@ interface UsuarioDAO {
     @Query("SELECT * FROM usuarios WHERE name_u = :username AND passw_u = :password LIMIT 1")
     suspend fun login(username: String, password: String): Usuario?
 
+    //Traigo todos los usuarios y verifico usuario
+    @Query("SELECT * FROM usuarios WHERE name_u = :username LIMIT 1")
+    suspend fun getUsuarioByName(username: String): Usuario?
+
 }
