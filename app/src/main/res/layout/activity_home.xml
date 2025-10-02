@@ -37,6 +37,20 @@
         app:layout_constraintBottom_toBottomOf="@id/searchBar"
         android:layout_margin="10dp"/>
 
+    <!-- Texto cuando no hay resultados -->
+    <TextView
+        android:id="@+id/tvSinResultados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="No se encontraron publicaciones"
+        android:textColor="@color/darkGray"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
     <!-- RecyclerView para mostrar publicaciones dinámicas -->
     <androidx.recyclerview.widget.RecyclerView

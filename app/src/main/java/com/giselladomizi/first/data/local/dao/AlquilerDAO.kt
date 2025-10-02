@@ -25,4 +25,8 @@ interface AlquilerDAO {
     @Query("SELECT * FROM alquiler WHERE id_perfil = :perfilId")
     suspend fun getAlquileresByPerfil(perfilId: Int): List<Alquiler>
 
+    //Consulta que devuelve alquileres donde tipo o ubicacion contengan el texto ingresado
+    @Query("SELECT * FROM alquiler WHERE tipo_alqui LIKE '%' || :query || '%' OR ubicacion_alqui LIKE '%' || :query || '%'")
+    suspend fun searchAlquileres(query: String): List<Alquiler>
+
 }

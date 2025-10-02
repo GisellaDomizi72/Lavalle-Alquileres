@@ -51,27 +51,36 @@ class RegistroActivity : AppCompatActivity() {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
             }else {
                 lifecycleScope.launch {
-                    // Insertar usuario y obtener el ID autogenerado
-                    val idUsuario = db.usuarioDAO().insertUsuario(
-                        Usuario(name_u = usuario, passw_u = contrasena)
-                    ).toInt()
+                    // Verificar si el usuario ya existe
+                    val usuarioExistente = db.usuarioDAO().getUsuarioByName(usuario)
 
-                    // Insertar perfil vinculado al usuario
-                    db.perfilDAO().insertPerfil(
-                        Perfil(
-                            nombre_p = nombre,
-                            apellido_p = apellido,
-                            correo_p = correo,
-                            telefono_p = telefono,
-                            id_user = idUsuario
+                    if (usuarioExistente != null) {
+                        runOnUiThread {
+                            Toast.makeText(this@RegistroActivity, "El usuario ya está registrado, elige otro nombre", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        // Insertar usuario y obtener el ID autogenerado
+                        val idUsuario = db.usuarioDAO().insertUsuario(
+                            Usuario(name_u = usuario, passw_u = contrasena)
+                        ).toInt()
+
+                        // Insertar perfil vinculado al usuario
+                        db.perfilDAO().insertPerfil(
+                            Perfil(
+                                nombre_p = nombre,
+                                apellido_p = apellido,
+                                correo_p = correo,
+                                telefono_p = telefono,
+                                id_user = idUsuario
+                            )
                         )
-                    )
 
-                    runOnUiThread {
-                        Toast.makeText(this@RegistroActivity, "¡Registro exitoso!", Toast.LENGTH_SHORT).show()
-                        val intentLogin = Intent(this@RegistroActivity, MainActivity::class.java)
-                        startActivity(intentLogin)
-                        finish()  //cierra registro para que no se pueda volver con "atrás"
+                        runOnUiThread {
+                            Toast.makeText(this@RegistroActivity, "¡Registro exitoso!", Toast.LENGTH_SHORT).show()
+                            val intentLogin = Intent(this@RegistroActivity, MainActivity::class.java)
+                            startActivity(intentLogin)
+                            finish()
+                        }
                     }
                 }
             }
