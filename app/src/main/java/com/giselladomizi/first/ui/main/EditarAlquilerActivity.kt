@@ -46,6 +46,7 @@ class EditarAlquilerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        ActivityCollector.addActivity(this)
         setContentView(R.layout.activity_editar_alquiler)
 
         // Inicializar vistas
@@ -107,5 +108,9 @@ class EditarAlquilerActivity : AppCompatActivity() {
             }
         }
 
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 }

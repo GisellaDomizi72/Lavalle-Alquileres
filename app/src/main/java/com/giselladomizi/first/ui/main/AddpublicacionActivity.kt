@@ -28,6 +28,7 @@ class AddpublicacionActivity : AppCompatActivity() {
 
         // Permite que la interfaz se muestre bajo la barra de estado y la barra de navegación
         enableEdgeToEdge()
+        ActivityCollector.addActivity(this)
 
         // Se carga el layout de la actividad
         setContentView(R.layout.activity_addpublicacion)
@@ -123,5 +124,9 @@ class AddpublicacionActivity : AppCompatActivity() {
             val intentmispublicaciones = Intent(this, MispublicacionesActivity::class.java)
             startActivity(intentmispublicaciones)
         }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 }

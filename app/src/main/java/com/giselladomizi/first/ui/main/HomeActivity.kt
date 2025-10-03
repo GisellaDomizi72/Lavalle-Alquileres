@@ -26,6 +26,7 @@ class HomeActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        ActivityCollector.addActivity(this)
         setContentView(R.layout.activity_home)
 
         // Referencias
@@ -37,6 +38,8 @@ class HomeActivity : AppCompatActivity(){
         buscador = findViewById(R.id.buscador)
 
         rvPublicaciones.layoutManager = LinearLayoutManager(this)
+        adapter = PublicacionAdapter(mutableListOf())
+        rvPublicaciones.adapter = adapter
 
         // Cargar publicaciones iniciales
         cargarPublicaciones("")
@@ -62,10 +65,16 @@ class HomeActivity : AppCompatActivity(){
         }
     }
 
-    private fun cargarPublicaciones(query: String) {
-        lifecycleScope.launch {
-            val db = AppDatabase.getDatabase(applicationContext)
+    override fun onResume() {
+        super.onResume()
+        // refrescar publicaciones siempre que se vuelve al Home
+        cargarPublicaciones(buscador.text.toString())
+    }
 
+    private fun cargarPublicaciones(query: String) {
+        val db = AppDatabase.getDatabase(applicationContext)
+
+        lifecycleScope.launch {
             val alquileres = if (query.isEmpty()) {
                 db.alquilerDAO().getAllAlquileres()
             } else {
@@ -77,16 +86,18 @@ class HomeActivity : AppCompatActivity(){
                 alquiler to perfil!!
             }
 
-            runOnUiThread {
-                if (publicacionesConPerfil.isEmpty()) {
-                    rvPublicaciones.visibility = View.GONE
-                    tvSinResultados.visibility = View.VISIBLE
-                } else {
-                    rvPublicaciones.visibility = View.VISIBLE
-                    tvSinResultados.visibility = View.GONE
-                    rvPublicaciones.adapter = PublicacionAdapter(publicacionesConPerfil)
-                }
+            if (publicacionesConPerfil.isEmpty()) {
+                rvPublicaciones.visibility = View.GONE
+                tvSinResultados.visibility = View.VISIBLE
+            } else {
+                rvPublicaciones.visibility = View.VISIBLE
+                tvSinResultados.visibility = View.GONE
+                adapter.updateData(publicacionesConPerfil)
             }
         }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 }

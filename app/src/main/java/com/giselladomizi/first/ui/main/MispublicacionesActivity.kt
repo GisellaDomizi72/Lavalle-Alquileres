@@ -24,6 +24,7 @@ class MispublicacionesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        ActivityCollector.addActivity(this)
         setContentView(R.layout.activity_mispublicaciones)
 
         // Inicializar vistas
@@ -89,6 +90,10 @@ class MispublicacionesActivity : AppCompatActivity() {
 
             publicacionesMias.adapter = adapter
         }
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 }
 
