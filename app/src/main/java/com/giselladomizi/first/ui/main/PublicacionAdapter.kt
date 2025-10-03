@@ -12,7 +12,7 @@ import com.giselladomizi.first.data.local.entity.Alquiler
 import com.giselladomizi.first.data.local.entity.Perfil
 
 class PublicacionAdapter(
-    private val publicaciones: List<Pair<Alquiler, Perfil>>
+    private val publicaciones: MutableList<Pair<Alquiler, Perfil>>
 ) : RecyclerView.Adapter<PublicacionAdapter.PublicacionViewHolder>() {
 
     class PublicacionViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -53,4 +53,11 @@ class PublicacionAdapter(
     }
 
     override fun getItemCount(): Int = publicaciones.size
+
+    // Metodo para actualizar datos sin crear un adapter nuevo
+    fun updateData(nuevaLista: List<Pair<Alquiler, Perfil>>) {
+        publicaciones.clear()
+        publicaciones.addAll(nuevaLista)
+        notifyDataSetChanged()
+    }
 }

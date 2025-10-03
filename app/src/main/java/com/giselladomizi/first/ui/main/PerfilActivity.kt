@@ -15,6 +15,7 @@ class PerfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        ActivityCollector.addActivity(this)
         setContentView(R.layout.activity_perfil)
 
         // Recuperar sesión
@@ -71,5 +72,9 @@ class PerfilActivity : AppCompatActivity() {
             finish() // Evito que vuelva al perfil
         }
 
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 }
