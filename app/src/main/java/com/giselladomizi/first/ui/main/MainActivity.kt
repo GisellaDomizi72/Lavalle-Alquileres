@@ -18,8 +18,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
+        // Verificar si hay sesión activa
+        val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
+        val idUsuario = prefs.getInt("id_usuario", -1)
+
+        if (idUsuario != -1) {
+            // Usuario ya tiene sesión, ir directo al Home
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish() // evita volver al login con el botón atrás
+            return
+        }
+
+        // Si no hay sesión, mostrar layout normal de login
+        setContentView(R.layout.activity_main)
         supportActionBar?.hide() // Oculta la barra que trae por defecto
 
         //Campos del Layout
