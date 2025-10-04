@@ -5,6 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.content.Intent
+import android.net.Uri
+import android.provider.ContactsContract
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.giselladomizi.first.R
@@ -41,6 +44,7 @@ class PublicacionAdapter(
         holder.telefono.text = "${perfil.telefono_p} - "
         holder.correo.text = "${perfil.correo_p}"
 
+        // Cargar imagen con Glide
         if (alquiler.imagen_alqui.isNotEmpty()) {
             // Glide se encarga de manejar URIs y permisos de forma segura
             Glide.with(holder.imagen.context)
@@ -49,6 +53,37 @@ class PublicacionAdapter(
                 .into(holder.imagen)
         } else {
             holder.imagen.setImageResource(android.R.color.darker_gray)
+        }
+
+        // Al tocar el teléfono → abrir marcador
+        holder.telefono.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(Intent.ACTION_DIAL).apply {
+                data = Uri.parse("tel:${perfil.telefono_p}")
+            }
+            context.startActivity(intent)
+        }
+
+        //Al mantener presionado el teléfono → guardar contacto
+        holder.telefono.setOnLongClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(ContactsContract.Intents.Insert.ACTION).apply {
+                type = ContactsContract.RawContacts.CONTENT_TYPE
+                putExtra(ContactsContract.Intents.Insert.NAME, "${perfil.nombre_p} ${perfil.apellido_p}")
+                putExtra(ContactsContract.Intents.Insert.PHONE, perfil.telefono_p)
+                putExtra(ContactsContract.Intents.Insert.EMAIL, perfil.correo_p)
+            }
+            context.startActivity(intent)
+            true
+        }
+
+        //Al tocar el correo → abrir app de email
+        holder.correo.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:${perfil.correo_p}")
+            }
+            context.startActivity(intent)
         }
     }
 
