@@ -17,6 +17,7 @@ import com.giselladomizi.first.data.local.databese.AppDatabase
 import com.giselladomizi.first.data.local.entity.Usuario
 import com.giselladomizi.first.data.local.entity.Perfil
 import kotlinx.coroutines.launch
+import org.mindrot.jbcrypt.BCrypt
 
 class RegistroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,9 +60,12 @@ class RegistroActivity : AppCompatActivity() {
                             Toast.makeText(this@RegistroActivity, "El usuario ya está registrado, elige otro nombre", Toast.LENGTH_SHORT).show()
                         }
                     } else {
+                        // Hashear la contraseña antes de guardar
+                        val hashedPassword = BCrypt.hashpw(contrasena, BCrypt.gensalt())
+
                         // Insertar usuario y obtener el ID autogenerado
                         val idUsuario = db.usuarioDAO().insertUsuario(
-                            Usuario(name_u = usuario, passw_u = contrasena)
+                            Usuario(name_u = usuario, passw_u = hashedPassword)
                         ).toInt()
 
                         // Insertar perfil vinculado al usuario
