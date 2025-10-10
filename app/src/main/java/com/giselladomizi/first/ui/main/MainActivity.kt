@@ -13,6 +13,7 @@ import androidx.room.Room
 import com.giselladomizi.first.R
 import com.giselladomizi.first.data.local.databese.AppDatabase
 import kotlinx.coroutines.launch
+import org.mindrot.jbcrypt.BCrypt
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +56,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
             } else {
                 lifecycleScope.launch {
-                    val user = db.usuarioDAO().login(usuario, password)
-                    if (user != null) {
+                    val user = db.usuarioDAO().getUsuarioByName(usuario)
+                    if (user != null  && BCrypt.checkpw(password, user.passw_u)) {
                         Toast.makeText(this@MainActivity, "¡Bienvenido a Lavalle Alquileres!", Toast.LENGTH_SHORT).show()
 
                         // Guardar sesión con el ID del usuario
