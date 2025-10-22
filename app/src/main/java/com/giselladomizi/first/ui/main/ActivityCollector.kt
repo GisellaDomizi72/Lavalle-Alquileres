@@ -18,11 +18,4 @@ object ActivityCollector {
     fun removeActivity(activity: Activity) {
         activities.remove(activity)
     }
-
-    fun finishAll() {
-        for (activity in activities) {
-            activity.finish()
-        }
-        activities.clear()
-    }
 }

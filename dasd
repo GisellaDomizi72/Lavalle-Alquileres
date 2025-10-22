@@ -1,0 +1,316 @@
+[33mcommit da951ffa403cc1dfb0e636a11f5ffb6bd0f4caff[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Merge: b190a9d 57bcc10
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Mon Oct 6 10:52:34 2025 -0300
+
+    Merge pull request #11 from GisellaDomizi72/RamaDomizi
+    
+    Publicaciones con Card View - Mejoras visuales
+
+[33mcommit 57bcc10a2908ffb9789100a5196f15d9e3473723[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Mon Oct 6 10:51:15 2025 -0300
+
+    Publicaciones con Card View
+
+[33mcommit b190a9d8c879bda271f93fccbd3f836a299191c6[m
+Merge: b93ca59 9602f86
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Sat Oct 4 09:54:16 2025 -0300
+
+    Merge pull request #10 from GisellaDomizi72/RamaDomizi
+    
+    Marcar el Teléfono cuando toco el contacto - Guardar Contacto cuando lo tengo presionado - Enviar Correo cuando presiono el correo
+
+[33mcommit 9602f8637ce71ce67b4c35c6774efc555c59b94d[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Sat Oct 4 09:52:13 2025 -0300
+
+    Marcar el Telefono - Guardar Contacto - Enviar Correo
+
+[33mcommit b93ca59887c67088756009cb0d850f63cbf9b38e[m
+Merge: 1d00cdd d3768aa
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Thu Oct 2 22:46:54 2025 -0300
+
+    Merge pull request #9 from GisellaDomizi72/RamaDomizi
+    
+    Sesión activa inicia en Home sino inicia en Main
+
+[33mcommit d3768aa56db20a4b0de89563361bb5abba70f095[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Thu Oct 2 22:43:40 2025 -0300
+
+    Sesión activa inicia Home sino Main
+
+[33mcommit 1d00cddf38903d81c3fe41b278e15055fdef622c[m
+Merge: aea68f3 b97b618
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Thu Oct 2 22:32:26 2025 -0300
+
+    Merge pull request #8 from GisellaDomizi72/RamaDomizi
+    
+    Ciclo de vida de los Activitys - Max Stack 4 Activitys
+
+[33mcommit b97b618ecf8ecd27389bc0c115e2694d5618d2da[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Thu Oct 2 22:29:25 2025 -0300
+
+    Ciclo de vida de los Activitys
+
+[33mcommit aea68f3c910c94e04ba588e09ed584f3cd6c785b[m
+Merge: 4c0a65c 399faea
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Thu Oct 2 13:52:00 2025 -0300
+
+    Merge pull request #7 from GisellaDomizi72/RamaDomizi
+    
+    Rama Domizi - Filtro en Home (por ubicación y tipo de alquiler) y Verificación al Registrar (verifico que no se repitan los usuarios antes de Registrar)
+
+[33mcommit 399faea6396c790fa46150873a6a43f2984f20bb[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Thu Oct 2 13:47:32 2025 -0300
+
+    Agrego filtro por Ubicacion y Tipo de Alquiler
+
+[33mcommit ea8a7dcd06fc24aefee30adff4893824d74281b8[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Thu Oct 2 13:16:01 2025 -0300
+
+    Verificación de usuario existente antes de un registro.
+
+[33mcommit 4c0a65c5d72781041283a6d86f442cad20cf86d6[m
+Merge: 6985287 b72fd33
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Sun Sep 21 14:19:23 2025 -0300
+
+    Merge pull request #6 from GisellaDomizi72/ramaIvan
+    
+    Rama Ivan - Eliminar y Editar Publicaciones
+
+[33mcommit b72fd33cdf7e2c7304a29f4437e2c6ab77226be9[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Sun Sep 21 14:15:35 2025 -0300
+
+    Agregué función de Editar Alquiler
+
+[33mcommit 378fbc5a7c7bd1b756a9a843342309fa2b465642[m
+Author: ivansilvaok <ivansilvaok@gmail.com>
+Date:   Fri Sep 12 20:23:29 2025 -0300
+
+    Visualizar mis publicaciones y eliminarlas con dialogo de confirmación
+
+[33mcommit 53c4faea6dc10b42934dddcdf2b2edcc0d841e77[m
+Author: ivansilvaok <ivansilvaok@gmail.com>
+Date:   Fri Sep 12 17:23:58 2025 -0300
+
+    Visualizar mis publicaciones y eliminarlas
+
+[33mcommit 091f898b07639a696d17b59319a247dd72a62ce9[m
+Author: ivansilvaok <ivansilvaok@gmail.com>
+Date:   Thu Sep 11 23:46:53 2025 -0300
+
+    Visualizar mis publicaciones y eliminarlas
+
+[33mcommit b88a042665da0825681bb8968ed9cada28ced046[m
+Merge: e554cc1 6985287
+Author: ivansilvaok <ivansilvaok@gmail.com>
+Date:   Tue Sep 9 16:15:24 2025 -0300
+
+    Merge branch 'master' into ramaIvan
+
+[33mcommit e554cc1191cb37364645882ce07ad6a49fb7fdde[m
+Author: ivansilvaok <ivansilvaok@gmail.com>
+Date:   Sun Sep 7 21:54:25 2025 -0300
+
+    Visualizar publicaciones en Mis Publicaciones
+
+[33mcommit 69852870b89f907e4e152ac3e520a8cce62f0723[m
+Merge: 3e38a85 004fee9
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Fri Sep 5 20:52:30 2025 -0300
+
+    Merge pull request #5 from GisellaDomizi72/RamaDomizi
+    
+    Corrección Menu Home
+
+[33mcommit 004fee9e2d3e15649b45376bc3fca7eaf8298670[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Fri Sep 5 20:50:40 2025 -0300
+
+    Corrección Menu Home
+
+[33mcommit 3e38a8511023596b6849f743ea3e082ca247d14b[m
+Merge: 365f313 73a94d5
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Fri Sep 5 15:32:56 2025 -0300
+
+    Merge pull request #4 from GisellaDomizi72/RamaGise
+    
+    Ver Perfil y Cerrar Sesión
+
+[33mcommit 73a94d51834e44dc3be759e14b24a3ae670bec0a[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Fri Sep 5 15:05:59 2025 -0300
+
+    Limpio imagen al guardar foto
+
+[33mcommit 07b3a92c14303972a1ca9c1a3504e734b4648434[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Fri Sep 5 11:48:15 2025 -0300
+
+    Agrego Vista Perfil y Cerrar Sesión
+
+[33mcommit b4c40c90f67cfbe21f2a349595b1eb634333fc23[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Fri Sep 5 11:25:07 2025 -0300
+
+    Perfil DAO
+
+[33mcommit 7bd94d39db63c294be4d19e2c29969978cdec4ed[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Fri Sep 5 11:22:25 2025 -0300
+
+    Activity Perfil
+
+[33mcommit b2793bcdfd85e2d89f2b098a39d92eecad032db7[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Fri Sep 5 11:20:16 2025 -0300
+
+    Vista Mi Cuenta
+
+[33mcommit 365f313d8e5decd71595a592292cdb72fe7622b9[m
+Merge: 757efc2 4da28d2
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Thu Sep 4 19:00:04 2025 -0300
+
+    Merge pull request #3 from GisellaDomizi72/RamaGisella
+    
+    Ignorar archivos de log de Kotlin / Cambios vista imagenes
+
+[33mcommit 4da28d20331ecab150e013f6f33d4c13a90c7dba[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Thu Sep 4 18:54:05 2025 -0300
+
+    Ignorar archivos de log de Kotlin
+
+[33mcommit 757efc2455ae07d3282c33d6f790b8f212b631bc[m
+Merge: b5b95d3 a5cc899
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Thu Sep 4 17:59:14 2025 -0300
+
+    Merge pull request #2 from GisellaDomizi72/ramaPruebas
+    
+    Se agrega la sección de Añadir Publicación
+
+[33mcommit a5cc899a41f45d5e6defab8513518a666fc5c872[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 17:46:38 2025 -0300
+
+    se agrgaron los comentarios correspondientes
+
+[33mcommit 48cea5c26df652199eea64df8c4e64dec5bed791[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 16:53:27 2025 -0300
+
+    addpublicacionActivity se agrego imagen formato horizontal
+
+[33mcommit 3a2cd65734bcc2974360391eeb9e217aad000eec[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 15:59:07 2025 -0300
+
+    se agrego el ScrollView
+
+[33mcommit e72b44efa6ccaf83ec504ae65f5c19d9b7430c23[m[33m ([m[1;32mramaPruebas[m[33m)[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 12:27:08 2025 -0300
+
+    Ahora se le asigna el id del usuario a las publicaciones
+
+[33mcommit ec7775c7a59ae05994dfe3aad7c4ef51a21b0b98[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 12:00:15 2025 -0300
+
+    prueba vista pagina principal
+
+[33mcommit 30fd0920ef19c09af651346d1b17853139adbb08[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 11:31:21 2025 -0300
+
+    pruebas
+
+[33mcommit 08f87c0d708752a41b6855efb495b779ac45cf08[m[33m ([m[1;32mramaAlex[m[33m)[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 10:41:34 2025 -0300
+
+    Funcionalidad completa agregar publicaciones
+
+[33mcommit 3043bb1300e61dc3dc9790e386bc0a947c3f85f3[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 10:10:50 2025 -0300
+
+    vista mis publicaciones
+
+[33mcommit 0010f1dc1c66c80486ae355170369f42564faa9d[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Thu Sep 4 10:03:18 2025 -0300
+
+    vista añadir publicacion
+
+[33mcommit b5b95d3ed47605b50fb9c3866ab60ae7429d9a91[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Wed Sep 3 16:03:18 2025 -0300
+
+    Add Registro y Login vinculado a la BD
+
+[33mcommit 94e58f43e43e3ae06723b44633099b0a2855a379[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Wed Sep 3 10:05:24 2025 -0300
+
+    Add activity y layout Registro
+
+[33mcommit daf8cefe1b945daccfa32cfd65a8f8c3861802bf[m
+Merge: 1fabefc 40c88a4
+Author: GisellaDomizi72 <165970626+GisellaDomizi72@users.noreply.github.com>
+Date:   Wed Sep 3 08:47:59 2025 -0300
+
+    Merge pull request #1 from GisellaDomizi72/ramaAlex
+    
+    Rama alex
+
+[33mcommit 40c88a46d9d0b59b2df83450e7d6cc56972ccbae[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Wed Sep 3 08:42:26 2025 -0300
+
+    sadasd
+
+[33mcommit 8ad9668e68d1856d49bbb410b7e234ba0df54ed5[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Wed Sep 3 08:35:59 2025 -0300
+
+    estructura de las carpetas
+
+[33mcommit aca3ad30c873d2446db5cbc996030563eb958507[m
+Merge: de30067 1fabefc
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Wed Sep 3 08:30:12 2025 -0300
+
+    Merge completado manteniendo cambios locales
+
+[33mcommit 1fabefcaaee92141ed922aeb5f4eb6a96509b821[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Wed Sep 3 07:59:38 2025 -0300
+
+    Second commit - Add Room
+
+[33mcommit de30067c059dfc419aff179015cdb8e31ca757ef[m
+Author: AlexJurado0 <alex45360981@gmail.com>
+Date:   Fri Aug 29 18:36:39 2025 -0300
+
+    sadsad
+
+[33mcommit a3a3f0f32c6fd7bdaf1f78b8ffd27eeee6f4c1df[m
+Author: Gisella-Domizi <giselladomizi72@gmail.com>
+Date:   Fri Aug 29 18:07:36 2025 -0300
+
+    First Commit

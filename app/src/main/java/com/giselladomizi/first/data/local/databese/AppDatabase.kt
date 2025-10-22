@@ -11,7 +11,6 @@ import com.giselladomizi.first.data.local.entity.Alquiler
 import com.giselladomizi.first.data.local.entity.Perfil
 import com.giselladomizi.first.data.local.entity.Usuario
 
-// version = 1 porque es la primera vez que la creamos
 @Database(
     entities = [Usuario::class, Perfil::class, Alquiler::class],
     version = 1,
@@ -22,11 +21,12 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun usuarioDAO(): UsuarioDAO
     abstract fun perfilDAO(): PerfilDAO
     abstract fun alquilerDAO(): AlquilerDAO
-
+    // se declara una instancia de la BD como singleton
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
+        // crea la instancia de la BD si no existe
         fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(

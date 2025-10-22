@@ -67,6 +67,7 @@ class PerfilActivity : AppCompatActivity() {
             prefs.edit().clear().apply() // Elimina la sesión guardada
 
             val intent = Intent(this, MainActivity::class.java)
+            // Limpiar la pila de actividades
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish() // Evito que vuelva al perfil

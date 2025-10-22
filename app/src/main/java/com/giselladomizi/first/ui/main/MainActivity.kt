@@ -9,7 +9,6 @@ import android.content.Intent
 import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
-import androidx.room.Room
 import com.giselladomizi.first.R
 import com.giselladomizi.first.data.local.databese.AppDatabase
 import kotlinx.coroutines.launch
@@ -18,7 +17,7 @@ import org.mindrot.jbcrypt.BCrypt
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge() // Permite que la interfaz se muestre bajo la barra de estado y la barra de navegación
 
         // Verificar si hay sesión activa
         val prefs = getSharedPreferences("sesion", MODE_PRIVATE)

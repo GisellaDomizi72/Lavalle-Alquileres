@@ -17,8 +17,7 @@ import androidx.room.ForeignKey
 )
 
 data class Alquiler(
-    @PrimaryKey(autoGenerate = true)
-    val id_alqui: Int = 0,
+    @PrimaryKey(autoGenerate = true) val id_alqui: Int = 0,
     val tipo_alqui: String,
     val ubicacion_alqui: String,
     val imagen_alqui: String, // ruta o url de la imagen

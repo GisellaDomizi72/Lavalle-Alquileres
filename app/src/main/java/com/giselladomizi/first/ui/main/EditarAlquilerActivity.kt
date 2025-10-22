@@ -31,9 +31,7 @@ class EditarAlquilerActivity : AppCompatActivity() {
     private var imagenUri: String = "" // ruta de la imagen actual
 
     // ActivityResultLauncher para seleccionar imagen de galería
-    private val seleccionarImagenLauncher = registerForActivityResult(
-        ActivityResultContracts.GetContent()
-    ) { uri ->
+    private val seleccionarImagenLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let {
             imagenUri = it.toString() // guardamos la URI como String
             Glide.with(this)

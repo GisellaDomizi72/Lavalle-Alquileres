@@ -78,7 +78,7 @@ class RegistroActivity : AppCompatActivity() {
                                 id_user = idUsuario
                             )
                         )
-
+                        //Indica que se debe ejecutar en nel hilo principal
                         runOnUiThread {
                             Toast.makeText(this@RegistroActivity, "¡Registro exitoso!", Toast.LENGTH_SHORT).show()
                             val intentLogin = Intent(this@RegistroActivity, MainActivity::class.java)

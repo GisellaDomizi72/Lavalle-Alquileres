@@ -35,7 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.HomeActivity" />
+        <activity
+            android:name=".ui.main.HomeActivity"
+            android:exported="false"  />
     </application>
 
 </manifest>
