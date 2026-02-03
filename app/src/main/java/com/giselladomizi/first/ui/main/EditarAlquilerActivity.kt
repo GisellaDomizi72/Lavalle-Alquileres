@@ -49,7 +49,7 @@ class EditarAlquilerActivity : AppCompatActivity() {
         ActivityCollector.addActivity(this)
         setContentView(R.layout.activity_editar_alquiler)
 
-        // Inicializar vistas
+        // Inicializar vistas con los datos correspondientes
         editTipo = findViewById(R.id.editTipo)
         editUbicacion = findViewById(R.id.editUbicacion)
         editDescripcion = findViewById(R.id.editDescripcion)
