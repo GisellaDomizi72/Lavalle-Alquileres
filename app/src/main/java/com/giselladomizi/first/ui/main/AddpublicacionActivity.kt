@@ -79,7 +79,7 @@ class AddpublicacionActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // ID de perfil fijo (temporal), luego se obtendrá del usuario logueado
+            // ID de perfil se obtendrá del usuario logueado
             val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
             val idPerfil = prefs.getInt("id_usuario", -1)
 

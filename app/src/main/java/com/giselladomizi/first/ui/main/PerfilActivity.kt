@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.giselladomizi.first.R
 import com.giselladomizi.first.data.local.databese.AppDatabase
 import kotlinx.coroutines.launch
@@ -18,28 +20,22 @@ class PerfilActivity : AppCompatActivity() {
         ActivityCollector.addActivity(this)
         setContentView(R.layout.activity_perfil)
 
+        val rvDatosCuenta = findViewById<RecyclerView>(R.id.rvDatosCuenta)
+        rvDatosCuenta.layoutManager = LinearLayoutManager(this)
+        rvDatosCuenta.setHasFixedSize(true)
+
         // Recuperar sesión
         val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
         val idUsuario = prefs.getInt("id_usuario", -1)
 
         if (idUsuario != -1) {
-            // Cargar datos del usuario desde la BD
             val db = AppDatabase.getDatabase(this)
 
             lifecycleScope.launch {
                 val perfil = db.perfilDAO().getPerfilByUserId(idUsuario)
-                if (perfil != null) {
-                    // Obtener referencias a todos los TextViews
-                    val pNombre = findViewById<TextView>(R.id.pNombre)
-                    val pApellido = findViewById<TextView>(R.id.pApellido)
-                    val pCorreo = findViewById<TextView>(R.id.pCorreo)
-                    val pTelefono = findViewById<TextView>(R.id.pTelefono)
 
-                    // Asignar los valores
-                    pNombre.text = "Nombre: ${perfil.nombre_p}"
-                    pApellido.text = "Apellido: ${perfil.apellido_p}"
-                    pCorreo.text = "Correo: ${perfil.correo_p}"
-                    pTelefono.text = "Teléfono: ${perfil.telefono_p}"
+                perfil?.let {
+                    rvDatosCuenta.adapter = PerfilAdapter(listOf(it))
                 }
             }
         }
